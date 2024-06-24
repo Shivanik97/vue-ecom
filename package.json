@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@auth0/auth0-vue": "^2.3.3",
+    "@headlessui/vue": "^1.7.22",
     "pinia": "^2.1.7",
     "vue": "^3.4.29",
     "vue-router": "^4.3.3"

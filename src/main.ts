@@ -5,9 +5,10 @@ import { createPinia } from 'pinia'
 
 import App from './App.vue'
 import router from './router'
+import { auth0 } from './config/authConfig'
 
 const app = createApp(App)
-
+app.use(auth0)
 app.use(createPinia())
 app.use(router)
 
