@@ -1,10 +1,7 @@
 <template>
   <body class="bg-tertiary">
     <header class="bg-primary">
-      <nav
-        class="flex px-2 py-2 items-center justify-between ml-2 sticky top-0"
-        aria-label="Global"
-      >
+      <nav class="flex px-2 py-2 items-center justify-between ml-2 top-0" aria-label="Global">
         <div class="flex lg:flex-1">
           <router-link class="flex items-center" to="/">
             <svg
@@ -111,6 +108,16 @@
                 :style="isActiveLink('/') ? activeLink : inactiveLink"
               >
                 Home
+              </router-link>
+            </li>
+            <li>
+              <router-link
+                to="/ViewComponent"
+                class="text-base p-2 rounded-md text-gray-900"
+                active-class="bg-primary text-white"
+                :style="isActiveLink('/ViewComponent') ? activeLink : inactiveLink"
+              >
+                View Expenses
               </router-link>
             </li>
           </ul>
