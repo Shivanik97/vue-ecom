@@ -1,6 +1,6 @@
 <template>
     <div>
-Hey Articles!
+
     </div>
 </template>
 
