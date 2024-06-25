@@ -15,7 +15,7 @@
 
 <script setup lang="ts">
 import { useCoursesStore } from '../../stores/courses'
-import ProductDetail from "./ProductDetail.vue"
+import ProductDetail from './ProductDetail.vue'
 const courseStore = useCoursesStore()
 </script>
 
