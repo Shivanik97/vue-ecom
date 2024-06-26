@@ -90,7 +90,7 @@ export const useCoursesStore = defineStore('courses', {
     favs() {
       return this.courses.filter(course => course.isFav)
     },
-    favCount() {
+    favCount(): number {
       return this.courses.reduce((index, course) => {
         return course.isFav ? index + 1 : index
       }, 0)
@@ -98,7 +98,7 @@ export const useCoursesStore = defineStore('courses', {
   },
 
   actions: {
-    toggleFav(id) {
+    toggleFav(id: number) {
         const course = this.courses.find(course => course.id === id)
         course.isFav = !course.isFav
     }

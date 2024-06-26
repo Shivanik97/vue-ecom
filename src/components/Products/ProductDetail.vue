@@ -31,18 +31,20 @@
       <h2 class="text-xl font-semibold mb-2">{{ $t(course.title) }}</h2>
       <p class="text-gray-700">{{ course.desc }}</p>
     </div>
-    <button
-      @click="startCourse(course)"
-      class="mt-4 bg-gray-700 text-white py-2 px-4 rounded-lg hover:bg-black transition-colors duration-300 focus:outline-none"
+
+    <a
+      :href="course.url"
+      target="_blank"
+      class="flex items-center justify-center mt-4 bg-gray-700 text-white py-2 px-4 rounded-lg hover:bg-black transition-colors duration-300 focus:outline-none"
     >
       Start Course
-    </button>
+    </a>
   </div>
 </template>
 
 <script setup lang="ts">
 import { auth0 } from '../../config/authConfig'
-import {useCoursesStore} from "../../stores/courses"
+import { useCoursesStore } from '../../stores/courses'
 
 const courseStore = useCoursesStore()
 const { loginWithRedirect, isAuthenticated, logout, user } = auth0
