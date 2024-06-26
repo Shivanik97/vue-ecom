@@ -65,6 +65,7 @@
         </div>
         <div v-else>
           <Menu as="div" class="relative ml-3 flex gap-4">
+            <router-link class="flex items-center" to="/wishlist">
             <div class="relative">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -83,9 +84,10 @@
               <span
                 class="absolute top-1 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-100 transform translate-x-1/2 -translate-y-1/2 bg-red-600 rounded-full"
               >
-                2
+                {{courseStore.favCount}}
               </span>
             </div>
+            </router-link>
             <!-- <div>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -165,8 +167,10 @@ import { computed } from 'vue'
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
 import { useRouter } from 'vue-router'
 import { auth0 } from '../config/authConfig'
+import {useCoursesStore} from "../stores/courses"
 
 const { loginWithRedirect, isAuthenticated, logout, user } = auth0
+const courseStore = useCoursesStore()
 const router = useRouter()
 const login = () => {
   loginWithRedirect()

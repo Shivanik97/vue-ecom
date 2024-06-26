@@ -42,9 +42,7 @@
 
 <script setup lang="ts">
 import { auth0 } from '../../config/authConfig'
-import {useCoursesStore} from "../../stores/courses"
 
-const courseStore = useCoursesStore()
 const { loginWithRedirect, isAuthenticated, logout, user } = auth0
 const props = defineProps({
   course: {
@@ -55,7 +53,7 @@ const props = defineProps({
 
 const toggleFav = (course: any) => {
   if (isAuthenticated.value) {
-    courseStore.toggleFav(course.id)
+    course.isFav = !course.isFav
   } else {
     loginWithRedirect()
   }
