@@ -7,7 +7,7 @@
     />
     <button
       @click="toggleFav(course)"
-      class="absolute top-2 right-2 bg-white p-2 rounded-full focus:outline-none"
+      class="absolute top-2 right-2 bg-white p-2 rounded-full border focus:outline-none"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -41,6 +41,9 @@
 </template>
 
 <script setup lang="ts">
+import { auth0 } from '../../config/authConfig'
+
+const { loginWithRedirect, isAuthenticated, logout, user } = auth0
 const props = defineProps({
   course: {
     type: Object,
@@ -49,7 +52,20 @@ const props = defineProps({
 })
 
 const toggleFav = (course: any) => {
-  course.isFav = !course.isFav
+  if (isAuthenticated.value) {
+    course.isFav = !course.isFav
+  } else {
+    loginWithRedirect()
+  }
+}
+
+
+const startCourse = (course: any) => {
+  if (isAuthenticated.value) {
+    console.log("course", course)
+  } else {
+    loginWithRedirect()
+  }
 }
 </script>
 

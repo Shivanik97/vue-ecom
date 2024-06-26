@@ -1,5 +1,5 @@
 <template>
- <div class="bg-[url('../assets/slide1.jpg')] h-52 bg-cover flex items-center">
+ <div class="bg-[url('../assets/slide1.jpg')] h-[272px] mt-3 bg-cover flex items-center">
   <p class="text-3xl font-sans ml-6">In learning, you will teach, and in teaching, you will learn.</p>
 </div>
 <Products />
