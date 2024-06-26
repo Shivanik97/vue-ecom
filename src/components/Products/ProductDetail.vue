@@ -28,7 +28,7 @@
   </div>
   <div class="p-6 flex flex-col justify-between">
     <div>
-      <h2 class="text-xl font-semibold mb-2">{{ course.title }}</h2>
+      <h2 class="text-xl font-semibold mb-2">{{ $t(course.title) }}</h2>
       <p class="text-gray-700">{{ course.desc }}</p>
     </div>
     <button
@@ -61,10 +61,9 @@ const toggleFav = (course: any) => {
   }
 }
 
-
 const startCourse = (course: any) => {
   if (isAuthenticated.value) {
-    console.log("course", course)
+    console.log('course', course)
   } else {
     loginWithRedirect()
   }
