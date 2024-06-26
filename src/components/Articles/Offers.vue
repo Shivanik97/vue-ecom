@@ -1,6 +1,6 @@
 <template>
   <div class="flex justify-center items-center pt-6">
-    <p class="text-3xl font-sans">ARTICLES</p>
+    <p class="text-3xl font-sans">{{ $t('articles') }}</p>
   </div>
   <div class="space-y-6 p-8">
     <div

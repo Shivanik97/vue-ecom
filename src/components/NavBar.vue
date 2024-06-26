@@ -30,7 +30,7 @@
                   active-class="text-black"
                   aria-current="page"
                 >
-                  Home
+                  {{ $t('home') }}
                 </router-link>
               </li>
               <li>
@@ -40,7 +40,7 @@
                   active-class="text-black"
                   aria-current="page"
                 >
-                  Courses
+                  {{ $t('courses') }}
                 </router-link>
               </li>
               <li>
@@ -50,7 +50,7 @@
                   active-class="text-black"
                   aria-current="page"
                 >
-                  Articles
+                  {{ $t('articles') }}
                 </router-link>
               </li>
             </ul>
@@ -59,12 +59,19 @@
       </div>
       <div class="lg:flex lg:flex-1 lg:justify-end">
         <div v-if="!isAuthenticated">
-          <a href="#" class="text-lg font-semibold leading-6 text-black" @click="login"
-            >LogIn <span aria-hidden="true"></span
-          ></a>
+          <a href="#" class="text-lg font-semibold leading-6 text-black" @click="login">
+            {{ $t('login') }}
+            <span aria-hidden="true"></span>
+          </a>
         </div>
         <div v-else>
           <Menu as="div" class="relative ml-3 flex gap-4">
+            <div class="ml-4">
+              <select v-model="locale" @change="changeLocale" class="p-1 rounded">
+                <option value="en">English</option>
+                <option value="nl">Dutch</option>
+              </select>
+            </div>
             <div class="relative">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -82,26 +89,9 @@
               </svg>
               <span
                 class="absolute top-1 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-100 transform translate-x-1/2 -translate-y-1/2 bg-red-600 rounded-full"
+                >2</span
               >
-                2
-              </span>
             </div>
-            <!-- <div>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                class="h-8 w-8 text-black"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
-                />
-              </svg>
-            </div> -->
             <div v-if="user">
               <MenuButton
                 class="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
@@ -148,8 +138,9 @@
                     href="#"
                     :class="[active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700']"
                     @click="logoutUser"
-                    >Log out</a
                   >
+                    {{ $t('logout') }}
+                  </a>
                 </MenuItem>
               </MenuItems>
             </transition>
@@ -164,15 +155,20 @@
 import { computed } from 'vue'
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
 import { useRouter } from 'vue-router'
+import { useI18n } from 'vue-i18n'
 import { auth0 } from '../config/authConfig'
 
 const { loginWithRedirect, isAuthenticated, logout, user } = auth0
 const router = useRouter()
+const { locale } = useI18n()
 const login = () => {
   loginWithRedirect()
 }
 const logoutUser = () => {
   logout({ logoutParams: { returnTo: window.location.origin } })
+}
+const changeLocale = (event: Event) => {
+  locale.value = (event.target as HTMLSelectElement).value
 }
 </script>
 
