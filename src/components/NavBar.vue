@@ -70,7 +70,7 @@
               <select
                 v-model="locale"
                 @change="changeLocale"
-                class="p-2 bg-slate-50 text-black rounded border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                class="p-2 bg-slate-50 text-black rounded border border-gray-600"
               >
                 <option value="en">English</option>
                 <option value="nl">Dutch</option>

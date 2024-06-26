@@ -1,5 +1,5 @@
 <template>
-  <body class="bg-tertiary">
+  <body class="">
     <NavBar />
     <router-view />
   </body>
