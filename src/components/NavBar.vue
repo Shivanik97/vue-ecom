@@ -21,9 +21,9 @@
           <span class="ml-2 self-center text-2xl font-semibold whitespace-nowrap text-black"
             >Ariqt-Learning</span
           >
-          <div v-if="isAuthenticated" class="flex items-center pl-6">
+          <div class="flex items-center pl-6">
             <ul class="flex flex-row font-medium mt-0 space-x-4 text-sm">
-              <li>
+              <li v-if="isAuthenticated">
                 <router-link
                   to="/"
                   class="text-base p-2 rounded-md text-gray-900"
@@ -33,7 +33,7 @@
                   {{ $t('home') }}
                 </router-link>
               </li>
-              <li>
+              <li v-if="isAuthenticated">
                 <router-link
                   to="/courses"
                   class="text-base p-2 rounded-md text-gray-900"
