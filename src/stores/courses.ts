@@ -1,9 +1,19 @@
 import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
 
+interface ICourse {
+  id: number
+  picture: string
+  title: string
+  desc: string
+  isFav: boolean
+  inCart: boolean
+  url: string
+}
+
 export const useCoursesStore = defineStore('courses', {
   state: () => ({
-    courses : [
+    courses: [
       {
         id: 1,
         picture:
@@ -82,13 +92,13 @@ export const useCoursesStore = defineStore('courses', {
         isFav: true,
         inCart: false,
         url: 'https://vueschool.io/courses/rapid-testing-with-vitest'
-      },
+      }
     ]
   }),
-  
+
   getters: {
-    favs() {
-      return this.courses.filter(course => course.isFav)
+    favs(): ICourse[] {
+      return this.courses.filter((course) => course.isFav)
     },
     favCount(): number {
       return this.courses.reduce((index, course) => {
@@ -99,9 +109,10 @@ export const useCoursesStore = defineStore('courses', {
 
   actions: {
     toggleFav(id: number) {
-        const course = this.courses.find(course => course.id === id)
+      const course = this.courses.find((course: ICourse) => course.id === id)
+      if (course) {
         course.isFav = !course.isFav
+      }
     }
   }
-
 })
