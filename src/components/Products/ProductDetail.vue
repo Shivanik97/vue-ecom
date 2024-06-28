@@ -35,7 +35,7 @@
     <a
       :href="course.url"
       target="_blank"
-      class="flex items-center justify-center mt-4 bg-gray-700 text-white py-2 px-4 rounded-lg hover:bg-black transition-colors duration-300 focus:outline-none"
+      class="flex items-center justify-center mt-4 bg-[#5f458f] text-white py-2 px-4 rounded-lg hover:bg-purple-800 transition-colors duration-300 focus:outline-none"
     >
       Start Course
     </a>

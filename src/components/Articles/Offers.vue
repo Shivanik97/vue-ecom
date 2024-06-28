@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-center items-center pt-6">
+  <div class="flex justify-center items-center pt-3">
     <p class="text-3xl font-sans">{{ $t('articles') }}</p>
   </div>
   <div class="space-y-6 p-8">
@@ -27,7 +27,7 @@
         <a
           :href="article.url"
           target="_blank"
-          class="bg-gray-700 text-white py-2 px-4 rounded-lg hover:bg-black transition-colors duration-300 focus:outline-none"
+          class="bg-[#5f458f] text-white py-2 px-4 rounded-lg hover:bg-purple-800 transition-colors duration-300 focus:outline-none"
         >
           Read More
         </a>

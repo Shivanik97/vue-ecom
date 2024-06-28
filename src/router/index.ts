@@ -1,8 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import Courses from "../components/Products/Products.vue"
-import Articles from "../components/Articles/Offers.vue"
-import WishList from "../components/Wishlist/wishlist.vue"
+import Courses from '../components/Products/Products.vue'
+import Articles from '../components/Articles/Offers.vue'
+import WishList from '../components/Wishlist/wishlist.vue'
 import { auth0 } from '../config/authConfig'
 
 const router = createRouter({
@@ -16,7 +16,8 @@ const router = createRouter({
     {
       path: '/courses',
       name: 'courses',
-      component: Courses
+      component: Courses,
+      meta: { requiresAuth: true }
     },
     {
       path: '/articles',
@@ -27,14 +28,13 @@ const router = createRouter({
       path: '/wishlist',
       name: 'wishlist',
       component: WishList
-    },
+    }
   ]
 })
 
 router.beforeEach(async (to, from, next) => {
   const { isAuthenticated, loginWithRedirect } = auth0
-
-  if (to.path !== '/' && !isAuthenticated) {
+  if (to.matched.some((record) => record.meta.requiresAuth) && !isAuthenticated.value) {
     await loginWithRedirect()
   } else {
     next()

@@ -21,7 +21,7 @@
           <span class="ml-2 self-center text-2xl font-semibold whitespace-nowrap text-black"
             >Ariqt-Learning</span
           >
-          <div v-if="isAuthenticated" class="flex items-center pl-6">
+          <div class="flex items-center pl-6">
             <ul class="flex flex-row font-medium mt-0 space-x-4 text-sm">
               <li>
                 <router-link
@@ -33,7 +33,7 @@
                   {{ $t('home') }}
                 </router-link>
               </li>
-              <li>
+              <li v-if="isAuthenticated">
                 <router-link
                   to="/courses"
                   class="text-base p-2 rounded-md text-gray-900"
@@ -70,7 +70,7 @@
               <select
                 v-model="locale"
                 @change="changeLocale"
-                class="p-2 bg-slate-50 text-black rounded border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                class="p-2 bg-slate-50 text-black rounded border border-gray-600"
               >
                 <option value="en">English</option>
                 <option value="nl">Dutch</option>
@@ -93,7 +93,7 @@
                   />
                 </svg>
                 <span
-                  class="absolute top-1 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-100 transform translate-x-1/2 -translate-y-1/2 bg-red-600 rounded-full"
+                  class="absolute top-1 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-100 transform translate-x-1/2 -translate-y-1/2 bg-[#5f458f] rounded-full"
                 >
                   {{ courseStore.favCount }}
                 </span>

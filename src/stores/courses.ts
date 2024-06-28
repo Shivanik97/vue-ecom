@@ -1,4 +1,3 @@
-import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
 
 interface ICourse {
@@ -20,7 +19,7 @@ export const useCoursesStore = defineStore('courses', {
           'https://vueschool.io/storage/media/8dd2c203b82732eb20a89b408c39dbdd/vue-js-3-fundamentals-with-the-composition-api.jpg',
         title: 'Vue_js_3_Fundamentals_with_the_Composition_API',
         desc: "Learn the fundamental concepts and get up and running with Vue.js 3 with the Composition API. Perfect if you have not touched Vue before, or you're just getting started!",
-        isFav: true,
+        isFav: false,
         inCart: false,
         url: 'https://vueschool.io/courses/vue-js-fundamentals-with-the-composition-api'
       },
@@ -40,7 +39,7 @@ export const useCoursesStore = defineStore('courses', {
           'https://vueschool.io/storage/media/0aa2cfd06e2b4367c1e140d30639da58/I18N-transparent.png',
         title: 'Internationalization_with_vue_i18n',
         desc: 'Master internationalization and learn how to create multilingual websites and vue.js applications with vue-i18n. With Vue i18n, we can automatically easily translate and transform text, numbers, dates, currencies, and so much more.',
-        isFav: true,
+        isFav: false,
         inCart: false,
         url: 'https://vueschool.io/courses/internationalization-with-vue-i18n'
       },
@@ -70,7 +69,7 @@ export const useCoursesStore = defineStore('courses', {
           'https://vueschool.io/storage/media/9ea899b785de8ee088c77a71366e9678/master-the-vuejs-router-by-building-a-travel-app.png',
         title: 'Vue_Router_for_Everyone',
         desc: 'Learn how to build powerful Single Page Applications in Vue with the Vue Router.',
-        isFav: true,
+        isFav: false,
         inCart: false,
         url: 'https://vueschool.io/courses/vue-router-4-for-everyone'
       },
@@ -89,7 +88,7 @@ export const useCoursesStore = defineStore('courses', {
         picture: 'https://vueschool.io/storage/media/b03768120c9df78a79b40fc6d5e71d3b/vitest.png',
         title: 'Rapid_Testing_with_Vitest',
         desc: "Vitest is a testing framework built for Vite! It's blazing fast test runs and zero config setup Vue.js 3 projects.",
-        isFav: true,
+        isFav: false,
         inCart: false,
         url: 'https://vueschool.io/courses/rapid-testing-with-vitest'
       }

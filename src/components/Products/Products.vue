@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-center items-center pt-6">
+  <div class="flex justify-center items-center pt-2">
     <p class="text-3xl font-sans">{{ $t('courses') }}</p>
   </div>
   <div class="p-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
