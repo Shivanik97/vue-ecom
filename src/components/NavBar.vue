@@ -23,7 +23,7 @@
           >
           <div class="flex items-center pl-6">
             <ul class="flex flex-row font-medium mt-0 space-x-4 text-sm">
-              <li v-if="isAuthenticated">
+              <li>
                 <router-link
                   to="/"
                   class="text-base p-2 rounded-md text-gray-900"
