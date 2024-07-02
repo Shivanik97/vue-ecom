@@ -74,6 +74,20 @@ export const useArticlesStore = defineStore('articles', () => {
       Author: 'Kondi Venkatesh',
       linkedIn: 'https://www.linkedin.com/in/venkatesh-kondi-50890322b/',
       url: 'https://medium.com/@venkateshkondi1533/vue-3-composables-for-reusable-logic-916b861b7532'
+    },
+    {
+      id: 11,
+      title: 'Revolutionize Your Vue 3 Apps with Pinia: The Ultimate State Management Guide',
+      Author: 'Revanth Kumar Patha',
+      linkedIn: 'https://www.linkedin.com/in/revanth-kumar-9246841a0/',
+      url: 'https://medium.com/@revanthkumarpatha/revolutionize-your-vue-3-apps-with-pinia-the-ultimate-state-management-guide-d3ddd2a2f78d'
+    },
+    {
+      id: 12,
+      title: 'Understanding ref, Reactivity in Vue: A Comparative Analysis with React and Angular',
+      Author: 'Shivani Kuntumalla',
+      linkedIn: 'https://www.linkedin.com/in/shivanik1997/',
+      url: 'https://medium.com/@kuntumallashivani/understanding-ref-reactivity-in-vue-49ea2531a800'
     }
   ])
 
